@@ -39,11 +39,11 @@ export default class ToDo extends Vue {
   @todos.Action
   public getTodo!: () => Promise<Record<string, unknown>[]>;
   @todos.Action
-  public closeTodo!: () => Promise<never>;
+  public closeTodo!: (value: PutToDo) => Promise<never>;
   @todos.Action
-  public addTodo!: () => Promise<any>;
+  public addTodo!: (title: string) => Promise<any>;
   @todos.Action
-  public deleteTodo!: () => Promise<unknown>;
+  public deleteTodo!: (id: number) => Promise<unknown>;
 
   init(): void {
     this.isLoading = true;
